@@ -1,0 +1,12 @@
+{
+    "bail": 1,
+    "verbose": true,
+    "reporters": [
+        "default",
+        ["./node_modules/jest-html-reporter", {
+            "pageTitle": "Test Report",
+            "outputPath": "test-report/test-report.html"
+        }]
+    ],
+    "testResultsProcessor": "./node_modules/jest-html-reporter"
+}

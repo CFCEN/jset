@@ -1,0 +1,27 @@
+name: Jekyll site CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  Jest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Run Tests
+        run: |
+          npm install 
+          npm install --save-dev jest
+          npm install --save-dev babel-jest @babel/core @babel/preset-env
+          npm install --save-dev @babel/preset-typescript
+          npm install --save-dev ts-jest
+          npm install --save-dev @jest/globals
+          npm install --save-dev @types/jest
+          npm install jest-html-reporter --save-dev
+          npm test
+      - uses: actions/checkout@v3
+        with: test-report
+        path: test-report
