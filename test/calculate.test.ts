@@ -6,3 +6,9 @@ describe('sum module', () => {
         expect(sum(1,2)).toBe(3)
     });
 });
+
+describe('sum2 module', () => {
+    test('sum2',  () => {
+        expect(sum(1,2)).toBe(3)
+    });
+});
