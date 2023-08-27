@@ -22,6 +22,8 @@ jobs:
           npm install --save-dev @types/jest
           npm install jest-html-reporter --save-dev
           npm test
-      - uses: actions/checkout@v3
-        with: test-report
-        path: test-report
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: test-report
+          path: test-report/
